@@ -1,6 +1,39 @@
-# Node.js
-node_modules
+# Node modules
+node_modules/
 
-# dotenv environment variables file
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
 .env
 
+# Database files
+*.sqlite
+*.sqlite3
+*.db
+
+# Build output
+dist/
+
+# TypeScript
+*.tsbuildinfo
+
+# VS Code directories and files
+.vscode/
+.history/
+
+# MacOS system files
+.DS_Store
+
+# Sequelize config
+config/config.json
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# npm
+package-lock.json
