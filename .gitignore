@@ -19,10 +19,6 @@ yarn-error.log*
 # TypeScript
 *.tsbuildinfo
 
-# Sequelize
-config/config.json
-migrations/
-seeders/
 
 # OS specific files
 Thumbs.db
