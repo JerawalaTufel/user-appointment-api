@@ -1,28 +1,25 @@
-import { config as dotenvConfig } from 'dotenv';
-import { Dialect } from 'sequelize';
-dotenvConfig();
+import dotenv from 'dotenv';
+dotenv.config(); // Load environment variables
 
-interface DbConfig {
+interface DBConfig {
   username: string;
   password: string;
   database: string;
   host: string;
-  dialect: Dialect;
-  use_env_variable?: string;
+  dialect: 'postgres';
 }
 
-interface Config {
-  [key: string]: DbConfig;
-}
+const development: DBConfig = {
+  username: process.env.DB_USERNAME || '',
+  password: process.env.DB_PASSWORD || '',
+  database: process.env.DB_NAME || '',
+  host: process.env.DB_HOST || '',
+  dialect: 'postgres',
+};
 
-const config: Config = {
-  development: {
-    username: 'postgres',
-    password: 'root',
-    database: 'user_appointment',
-    host: '127.0.0.1',
-    dialect: 'postgres' as Dialect,
-  }
+
+const config = {
+  development,
 };
 
 export default config;
