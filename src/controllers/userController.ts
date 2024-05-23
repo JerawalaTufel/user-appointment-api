@@ -1,7 +1,6 @@
 import { Request, Response } from 'express';
-const {
-    Model
-  } = require('sequelize');
+import db from '../models';
+
   import {validateCreateUser , validateList , validateSearchUsers , validateUpdateUserStatus} from '../services/validation'
 
 
@@ -14,7 +13,7 @@ export const listUsers = async (req: Request, res: Response): Promise<void> => {
   const { page = '1', limit = '10' } = req.query;
   const offset = (Number(page) - 1) * Number(limit);
   try {
-    const users = await Model.User.findAndCountAll({ limit: Number(limit), offset });
+    const users = await db.User.findAndCountAll({ limit: Number(limit), offset });
     res.json(users);
   } catch (error) {
     res.status(500).json({ error: (error as Error).message });
@@ -30,7 +29,7 @@ export const searchUsers = async (req: Request, res: Response): Promise<void> =>
 
   const { fullName, email, status } = req.query as { fullName?: string; email?: string; status?: string };
   try {
-    const users = await Model.User.findAll({ where: { fullName, email, status } });
+    const users = await db.User.findAll({ where: { fullName, email, status } });
     res.json(users);
   } catch (error) {
     res.status(500).json({ error: (error as Error).message });
@@ -47,7 +46,7 @@ export const createUser = async (req: Request, res: Response): Promise<void> => 
   const { fullName, email, status } = req.body as { fullName: string; email: string; status: string };
   // Add validation logic here
   try {
-    const user = await Model.User.create({ fullName, email, status });
+    const user = await db.User.create({ fullName, email, status });
     res.json(user);
   } catch (error) {
     res.status(400).json({ error: (error as Error).message });
@@ -63,7 +62,7 @@ export const updateUserStatus = async (req: Request, res: Response): Promise<voi
     }  const { id } = req.params;
   const { status } = req.body as { status: string };
   try {
-    const user = await Model.User.findByPk(id);
+    const user = await db.User.findByPk(id);
     if (!user) {
       res.status(404).json({ error: 'User not found' });
       return;

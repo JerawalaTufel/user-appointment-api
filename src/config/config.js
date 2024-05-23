@@ -1,15 +1,7 @@
-import dotenv from 'dotenv';
+const dotenv = require('dotenv');
 dotenv.config(); // Load environment variables
 
-interface DBConfig {
-  username: string;
-  password: string;
-  database: string;
-  host: string;
-  dialect: 'postgres';
-}
-
-const development: DBConfig = {
+const development = {
   username: process.env.DB_USERNAME || '',
   password: process.env.DB_PASSWORD || '',
   database: process.env.DB_NAME || '',
@@ -17,9 +9,8 @@ const development: DBConfig = {
   dialect: 'postgres',
 };
 
-
 const config = {
   development,
 };
 
-export default config;
+module.exports = config;

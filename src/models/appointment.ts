@@ -25,6 +25,7 @@ module.exports = (sequelize: any, DataTypes: any) => {
     endTime!:TimeRanges;
     static associate(models: any) {
       // define association here
+      Appointment.belongsTo(models.User, { foreignKey: 'userId' });
     }
   }
   Appointment.init(
@@ -61,7 +62,6 @@ module.exports = (sequelize: any, DataTypes: any) => {
     }
   );
   
-  Appointment.belongsTo(Model.User, { foreignKey: 'userId' });
   
   return Appointment;
 }
