@@ -1,0 +1,479 @@
+{
+	"info": {
+		"_postman_id": "3f9f8714-5300-4819-8b02-671f1647893c",
+		"name": "user-appointment-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29427615"
+	},
+	"item": [
+		{
+			"name": "USER",
+			"item": [
+				{
+					"name": "CREATE-LIST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\" : \"tufel jerawala\",\r\n    \"email\" : \"tufel@gmail.com\",\r\n    \"status\" : \"active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/users",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "CREATE-LIST",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fullName\" : \"tufel jerawala\",\r\n    \"email\" : \"tufel@gmail.com\",\r\n    \"status\" : \"active\"\r\n}"
+								},
+								"url": {
+									"raw": "localhost:5000/users",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"users"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "LIST-USER",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/users?page=1&limit=10",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "LIST-USER",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/users?page=1&limit=10",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "SEARCH-USER",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "fullName",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/users/search?fullName=tufel jerawala&email=tufel@gmail.com&status=active",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"search"
+							],
+							"query": [
+								{
+									"key": "fullName",
+									"value": "tufel jerawala"
+								},
+								{
+									"key": "email",
+									"value": "tufel@gmail.com"
+								},
+								{
+									"key": "status",
+									"value": "active"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SEARCH-USER",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/users/search?fullName=tufel jerawala&email=tufel@gmail.com&status=active",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"users",
+										"search"
+									],
+									"query": [
+										{
+											"key": "fullName",
+											"value": "tufel jerawala"
+										},
+										{
+											"key": "email",
+											"value": "tufel@gmail.com"
+										},
+										{
+											"key": "status",
+											"value": "active"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "UPDATE-STATUS",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\" : \"active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/users/1",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "UPDATE-STATUS",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status\" : \"active\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/users/1",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"users",
+										"1"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "APPOINTMENT",
+			"item": [
+				{
+					"name": "CREATE-APPOINTMENT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\" : 1,\r\n    \"date\" : \"2024-05-30\",\r\n    \"startTime\" : \"11:30\",\r\n    \"endTime\" : \"11:59\"   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/appointments",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"appointments"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "CREATE-APPOINTMENT",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\" : 1,\r\n    \"date\" : \"2024-05-24\",\r\n    \"startTime\" : \"14:30\",\r\n    \"endTime\" : \"23:59\"   \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/appointments",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"appointments"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "LIST-APPOINTMENT",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/appointments?page=1&limit=10",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"appointments"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "LIST-APPOINTMENT",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/appointments?page=1&limit=10",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"appointments"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "SEARCH-APPOINTMENT",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/appointments/search?fullName=tufel jerawala&status=active&date=2024-05-28,22:59:00",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"appointments",
+								"search"
+							],
+							"query": [
+								{
+									"key": "fullName",
+									"value": "tufel jerawala"
+								},
+								{
+									"key": "status",
+									"value": "active"
+								},
+								{
+									"key": "date",
+									"value": "2024-05-28,22:59:00"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SEARCH-APPOINTMENT",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5000/appointments/search?fullName=tufel jerawala&status=active&date=2024-05-28,22:59:00",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"appointments",
+										"search"
+									],
+									"query": [
+										{
+											"key": "fullName",
+											"value": "tufel jerawala"
+										},
+										{
+											"key": "status",
+											"value": "active"
+										},
+										{
+											"key": "date",
+											"value": "2024-05-28,22:59:00"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		}
+	]
+}

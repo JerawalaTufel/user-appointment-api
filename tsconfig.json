@@ -1,22 +1,20 @@
 {
   "compilerOptions": {
-    /* Visit https://aka.ms/tsconfig.json to read more about this file */
-
-    /* Basic Options */
-    "incremental": true,                   /* Enable incremental compilation */
-    "target": "ESNext",                          /* Specify ECMAScript target version: 'ES3', 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', or 'ESNEXT'. */
-    "module": "commonjs",                     /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */
-    "moduleResolution": "node",             /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
-    "allowJs": true,                        /* Allow JavaScript files to be compiled. */
-    "outDir": "./build",                    /* Redirect output structure to the directory. */
-    "esModuleInterop": true,                /* Enable 'import * as ...' syntax for CommonJS modules */
-    "forceConsistentCasingInFileNames": true,  /* Disallow inconsistently-cased references to the same file. */
-    "skipLibCheck": true,                   /* Skip type checking of declaration files. */
-    "strict": true                          /* Enable all strict type-checking options. */
+    "incremental": true,
+    "target": "ESNext",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "outDir": "./build",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "strict": true
   },
   "include": [
     "src/**/*.ts",
-    "src/**/*.js"
-, "server.ts"  ],
+    "src/**/*.js",
+    "server.ts"
+  ],
   "exclude": ["node_modules"]
 }

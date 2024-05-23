@@ -6,7 +6,7 @@ const {
 interface AppointmentAttributes {
   id: number;
   userId: number;
-  date : Date;
+  date : string;
   startTime : TimeRanges;
   endTime : TimeRanges;
 }
@@ -20,7 +20,7 @@ module.exports = (sequelize: any, DataTypes: any) => {
      */
     id!: number;
     userId!: number;
-    date!: Date;
+    date!: string;
     startTime!:TimeRanges;
     endTime!:TimeRanges;
     static associate(models: any) {
@@ -44,7 +44,7 @@ module.exports = (sequelize: any, DataTypes: any) => {
         allowNull: false,
       },
       date: {
-        type: DataTypes.DATE,
+        type: DataTypes.STRING,
         allowNull: false,
       },
       startTime: {
